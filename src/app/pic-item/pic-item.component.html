@@ -1,0 +1,8 @@
+<div class="picitem-card" [ngClass]="{liked:buttonText==='unLike'}">
+<h2>{{picItemIn.title|uppercase}}</h2>
+<h3>{{picItemIn.description}}</h3>
+<h4>{{picItemIn.createdOn|date:"medium"}}</h4>
+<img [src]="picItemIn.picUrl">
+<h3 *ngIf="picItemIn.location"> uploaded from {{picItemIn.location}}</h3>
+<h2 [ngStyle]="{'color':'red'}"><p>{{picItemIn.likes}} 👍</p><button (click)="liked()">{{buttonText}}</button>  </h2>
+</div>
