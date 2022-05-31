@@ -1,7 +1,8 @@
-<header class="header-box">
-    <h1 >Tweets</h1>
+<header [ngClass]="{'header-box':true,'twitter':headerText=='Twitter posts like app','reddit':headerText!='Twitter posts like app'}">
+   
+    <h1 >{{headerText}}</h1>
     <nav>
       <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
-      <a routerLink="posts" routerLinkActive="active">FaceSnaps</a>
-    </nav>
+      <a routerLink="posts" routerLinkActive="active">Posts</a>
+    </nav> 
   </header>

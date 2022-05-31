@@ -1,15 +1,15 @@
 import { Component,Input,OnInit    } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { PicItem } from '../models/pic-item.model';
 import { PicsService } from '../services/pics.service';
 
 @Component({
-  selector: 'app-pic-item',
-  templateUrl: './pic-item.component.html',
-  styleUrls: ['./pic-item.component.scss']
+  selector: 'app-pic-detail',
+  templateUrl: './pic-detail.component.html',
+  styleUrls: ['./pic-detail.component.scss']
 })
-export class PicItemComponent implements OnInit {
-@Input() picItemIn!:PicItem
+export class PicDetailComponent implements OnInit {
+ picItemIn!:PicItem
 title!:string;
 description!:string;
 createdOn!:Date;
@@ -18,12 +18,14 @@ picUrl!:string;
 isLiked!:boolean;
 buttonText!:string;
 
-   constructor(private picsservice:PicsService,private router:Router){}
+   constructor(private picsservice:PicsService,private route:ActivatedRoute){}
 
   ngOnInit(): void {
      
     this.buttonText="Like";
     this.isLiked=false;
+    const postId=+this.route.snapshot.params["id"];
+    this.picItemIn=this.picsservice.getPostById(postId);
      
     
 
@@ -42,12 +44,6 @@ buttonText!:string;
      this.picsservice.postLikeButton(this.picItemIn.id,"yes")
      this.buttonText="unLike";}
 
-  }
-  showMore():void{
-    
-  
-      this.router.navigateByUrl('posts/'+this.picItemIn.id);
-      
   }
 
 }

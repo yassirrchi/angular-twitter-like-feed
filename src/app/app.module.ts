@@ -7,6 +7,7 @@ import { PicListComponent } from './pic-list/pic-list.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DefPageComponent } from './def-page/def-page.component';
+import { PicDetailComponent } from './pic-detail/pic-detail.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DefPageComponent } from './def-page/def-page.component';
     PicItemComponent,
     PicListComponent,
     AppHeaderComponent,
-    DefPageComponent
+    DefPageComponent,
+    PicDetailComponent
   ],
   imports: [
     BrowserModule,
