@@ -1,4 +1,5 @@
 export class PicItem{
+      id!:number;
       title!:string;
      description!:string;
      picUrl!:string;

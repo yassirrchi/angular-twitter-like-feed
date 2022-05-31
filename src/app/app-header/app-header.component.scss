@@ -1,0 +1,21 @@
+a {
+    margin: 0 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .active {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+  }
+  .header-box{
+      text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    color: white;
+    padding: 10px 30px;
+    background-color: rgb(13, 122, 255);
+  }
